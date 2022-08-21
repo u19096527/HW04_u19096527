@@ -39,18 +39,18 @@ namespace HW04_u19096527.Controllers
             //if list "Users" is empty then populate with following
             if (Users.Count() == 0)
             {
-                Clients.Add(new Client(1,"Kara","Danvers", "084 351 1653", "kara.danvers@gmail.com","Kara123", "Ms.", "31-05-1995"));
-                Clients.Add(new Client(2, "Barry", "Allen", "082 944 9497", "barry.allen@yahoo.com", "Barry123", "Mr.", "27-08-1971"));
-                Clients.Add(new Client(3, "Oliver", "Queen", "082 297 4942", "oliver.queen@hotmail.com", "Oliver123", "Mr.", "30-09-1983"));
+                Clients.Add(new Client("C1","Kara","Danvers", "084 351 1653", "kara.danvers@gmail.com","Kara123", "Ms.", "31-05-1995"));
+                Clients.Add(new Client("C2", "Barry", "Allen", "082 944 9497", "barry.allen@yahoo.com", "Barry123", "Mr.", "27-08-1971"));
+                Clients.Add(new Client("C3", "Oliver", "Queen", "082 297 4942", "oliver.queen@hotmail.com", "Oliver123", "Mr.", "30-09-1983"));
 
-                //        public Client(string Title, string DOB, int ID, string Name, string Surname, string CellNumber, string Email, string Password) : base(ID, Name, Surname, CellNumber, Email, Password)
+                //public Client(string Title, string DOB, int ID, string Name, string Surname, string CellNumber, string Email, string Password) : base(ID, Name, Surname, CellNumber, Email, Password)
 
                 //public Professional(int ID, string Name, string Surname, string CellNumber, string Email, string Password, string OrgStructure, int NumOfEmployees, string BusinessName):base( ID,  Name,  Surname,  CellNumber,  Email, Password)
-                Professionals.Add(new Professional(1,"Tony","Stark", "014 778 9268", "tony@starkindustries.com","123Stark","Small Business",236,"Stark Industries"));
-                Professionals.Add(new Professional(2, "Natasha", "Romanoff", "014 901 9647", "natasha@blackwidowsecurity.com", "123Romanoff", "Small Business", 80, "Black Widow Security"));
-                Professionals.Add(new Professional(3, "Steve", "Rogers", "013 653 2698", "steve@brooklynplumbing.com", "123Rogers", "Micro Business", 5, "Brooklyn Plumbing Solutions"));
+                Professionals.Add(new Professional("P1","Tony","Stark", "014 778 9268", "tony@starkindustries.com","123Stark","Small Business",236,"Stark Industries"));
+                Professionals.Add(new Professional("P2", "Natasha", "Romanoff", "014 901 9647", "natasha@blackwidowsecurity.com", "123Romanoff", "Small Business", 80, "Black Widow Security"));
+                Professionals.Add(new Professional("P3", "Steve", "Rogers", "013 653 2698", "steve@brooklynplumbing.com", "123Rogers", "Micro Business", 5, "Brooklyn Plumbing Solutions"));
 
-                // populaate user account list
+                // populate user account list
                 Users.AddRange(Clients);
                 Users.AddRange(Professionals);
             }
@@ -65,12 +65,6 @@ namespace HW04_u19096527.Controllers
             return View();
         }
 
-        public ActionResult LogIn()
-        {
-            return View();
-        }
-
- 
 
         public ActionResult About()
         {

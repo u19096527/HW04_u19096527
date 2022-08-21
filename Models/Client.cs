@@ -13,7 +13,7 @@ namespace HW04_u19096527.Models
         public string mDOB;
 
         //DEFAULT CONSTRUCTORS
-        public Client(int ID, string Name, string Surname, string CellNumber, string Email, string Password, string Title, string DOB) : base(ID, Name, Surname, CellNumber, Email, Password)
+        public Client(string ID, string Name, string Surname, string CellNumber, string Email, string Password, string Title, string DOB) : base(ID, Name, Surname, CellNumber, Email, Password)
         {
             mTitle = Title;
             mDOB = DOB;

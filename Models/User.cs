@@ -8,7 +8,7 @@ namespace HW04_u19096527.Models
     public class User
     {
         //DATA MEMBERS
-        public int mID;
+        public string mID;
         public string mName;
         public string mSurname;
         public string mCellNumber;
@@ -16,7 +16,7 @@ namespace HW04_u19096527.Models
         public string mPassword;
 
         //PROPERTIES
-        public int ID { get => mID; set => mID = value; }
+        public string ID { get => mID; set => mID = value; }
         public string Name { get => mName; set => mName = value; }
         public string Surname { get => mSurname; set => mSurname = value; }
         public string CellNumber { get => mCellNumber; set => mCellNumber = value; }
@@ -29,7 +29,7 @@ namespace HW04_u19096527.Models
 
         }
 
-        public User(int ID, string Name, string Surname, string CellNumber, string Email, string Password)
+        public User(string ID, string Name, string Surname, string CellNumber, string Email, string Password)
         {
             mID = ID;
             mName = Name;

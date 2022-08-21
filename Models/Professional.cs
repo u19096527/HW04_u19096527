@@ -18,7 +18,7 @@ namespace HW04_u19096527.Models
 
         }
 
-        public Professional(int ID, string Name, string Surname, string CellNumber, string Email, string Password, string OrgStructure, int NumOfEmployees, string BusinessName):base( ID,  Name,  Surname,  CellNumber,  Email, Password)
+        public Professional(string ID, string Name, string Surname, string CellNumber, string Email, string Password, string OrgStructure, int NumOfEmployees, string BusinessName):base( ID,  Name,  Surname,  CellNumber,  Email, Password)
         {
             mOrgStructure = OrgStructure;
             mNumOfEmployees = NumOfEmployees;
