@@ -8,27 +8,23 @@ using HW04_u19096527.Controllers;
 
 namespace HW04_u19096527.Controllers
 {
-    public class ClientController : Controller
+    public class ProController : Controller
     {
-        //DECLARE CLIENT USERS
-        public static List<Client> Clients = new List<Client>();
+        //DECLARE PROFESSIONAL USERS
+        public static List<Professional> Professionals = new List<Professional>();
 
-        //DECLARE JOB POST LIST
         public static List<JobPost> currentJobPosts = new List<JobPost>();
 
-
-        // GET: Client
-        private void InitialiseClients()
+        private void InitialiseProfessionals()
         {
             //if list "Users" is empty then populate with following
-            if (Clients.Count() == 0)
+            if (Professionals.Count() == 0)
             {
-                Clients.Add(new Client("C1", "Kara", "Danvers", "084 351 1653", "kara.danvers@gmail.com", "Kara123", "Ms.", "31-05-1995"));
-                Clients.Add(new Client("C2", "Barry", "Allen", "082 944 9497", "barry.allen@yahoo.com", "Barry123", "Mr.", "27-08-1971"));
-                Clients.Add(new Client("C3", "Oliver", "Queen", "082 297 4942", "oliver.queen@hotmail.com", "Oliver123", "Mr.", "30-09-1983"));
-
+                Professionals.Add(new Professional("P1", "Tony", "Stark", "014 778 9268", "tony@starkindustries.com", "123Stark", "Small Business", 236, "Stark Industries"));
+                Professionals.Add(new Professional("P2", "Natasha", "Romanoff", "014 901 9647", "natasha@blackwidowsecurity.com", "123Romanoff", "Small Business", 80, "Black Widow Security"));
+                Professionals.Add(new Professional("P3", "Steve", "Rogers", "013 653 2698", "steve@brooklynplumbing.com", "123Rogers", "Micro Business", 5, "Brooklyn Plumbing Solutions"));
             }
-            //if list jobPosts is empty then populate with the foollowing
+
             if (currentJobPosts.Count() == 0)
             {
                 currentJobPosts.Add(new JobPost("JB1", "Plumbing", "Toilet has been leaking for 3 days from the cistern tank. New shower door and basin needs to be installed.", "Pretoria", "23-08-2022", "Incomplete", "Domestic", "Short-Term", 2));
@@ -37,25 +33,29 @@ namespace HW04_u19096527.Controllers
 
             }
         }
+
+
+
+            // GET: Pro
             public ActionResult Index()
         {
-            InitialiseClients();
-            //my client user account
+            InitialiseProfessionals();
+            //my professional user account details
             return View();
         }
-        public ActionResult CreateClient()
+
+        public ActionResult CreatePro()
         {
-            InitialiseClients();
+            InitialiseProfessionals();
 
             return View();
         }
 
-        public ActionResult AddJobPost()
+        public ActionResult ViewJobPosts()
         {
-            InitialiseClients();
+            InitialiseProfessionals();
 
             return View();
         }
-
     }
 }

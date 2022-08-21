@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using HW04_u19096527.Models;
+using HW04_u19096527.Controllers;
 
 namespace HW04_u19096527.Controllers
 {
@@ -15,8 +16,14 @@ namespace HW04_u19096527.Controllers
         //DECLARE PROFESSIONAL USERS
         public static List<Professional> Professionals = new List<Professional>();
 
+        //DECLARE JOB POST LIST
+        public static List<JobPost> currentJobPosts = new List<JobPost>();
+
+
+
         /*        
-         
+
+         Clients.Add(new Client("C1","Kara","Danvers", "084 351 1653", "kara.danvers@gmail.com","Kara123", "Ms.", "31-05-1995"));
          
          
          
@@ -43,9 +50,6 @@ namespace HW04_u19096527.Controllers
                 Clients.Add(new Client("C2", "Barry", "Allen", "082 944 9497", "barry.allen@yahoo.com", "Barry123", "Mr.", "27-08-1971"));
                 Clients.Add(new Client("C3", "Oliver", "Queen", "082 297 4942", "oliver.queen@hotmail.com", "Oliver123", "Mr.", "30-09-1983"));
 
-                //public Client(string Title, string DOB, int ID, string Name, string Surname, string CellNumber, string Email, string Password) : base(ID, Name, Surname, CellNumber, Email, Password)
-
-                //public Professional(int ID, string Name, string Surname, string CellNumber, string Email, string Password, string OrgStructure, int NumOfEmployees, string BusinessName):base( ID,  Name,  Surname,  CellNumber,  Email, Password)
                 Professionals.Add(new Professional("P1","Tony","Stark", "014 778 9268", "tony@starkindustries.com","123Stark","Small Business",236,"Stark Industries"));
                 Professionals.Add(new Professional("P2", "Natasha", "Romanoff", "014 901 9647", "natasha@blackwidowsecurity.com", "123Romanoff", "Small Business", 80, "Black Widow Security"));
                 Professionals.Add(new Professional("P3", "Steve", "Rogers", "013 653 2698", "steve@brooklynplumbing.com", "123Rogers", "Micro Business", 5, "Brooklyn Plumbing Solutions"));
@@ -53,6 +57,16 @@ namespace HW04_u19096527.Controllers
                 // populate user account list
                 Users.AddRange(Clients);
                 Users.AddRange(Professionals);
+            }
+            //public JobPost(string JobPostID, string FieldType, string Description, string Location, string DueDate, string Status, string JobType, string JobTerm, int NumOfWorkers)
+
+            //if list jobPosts is empty then populate with the foollowing
+            if (currentJobPosts.Count() == 0)
+            {
+                currentJobPosts.Add(new JobPost("JB1","Plumbing","Toilet has been leaking for 3 days from the cistern tank. New shower door and basin needs to be installed.","Pretoria","23-08-2022","Incomplete","Domestic","Short-Term",2));
+                currentJobPosts.Add(new JobPost("JB2", "Construction", "Government to build public toilets for schools in rural areas. Experience with brick-laying or plumbing is needed", "Soshanguve", "31-08-2022", "Incomplete", "Non-Domestic", "Long-Term", 15));
+                currentJobPosts.Add(new JobPost("JB3", "Gardening", "New gardener wanted. Experience with decorative bush cutting. If job done well, you can get a permanent job as regular gardener", "Polokwane", "03-09-2022", "Incomplete", "Domestic", "Short-Term", 1));
+
             }
 
         }

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<HW04_u19096527.Models.JobPost>
+@using HW04_u19096527.Controllers;
+@{
+    ViewBag.Title = "ViewJobPosts";
+}
+
+<h2>ViewJobPosts</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FieldType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobTerm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumOfWorkers)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FieldType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DueDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobTerm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumOfWorkers)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.JobPostID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.JobPostID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.JobPostID })
+        </td>
+    </tr>
+}
+
+</table>
